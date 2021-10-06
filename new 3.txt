@@ -25,10 +25,7 @@ numeros
 
 
 	>>> ’spam eggs’
-	’spam eggs’
-	>>> ’doesn\’t’
-	"doesn’t"
-	>>> "doesn’t"
+	
 	"doesn’t"
 	>>> ’"Yes," he said.’
 	’"Yes," he said.’
