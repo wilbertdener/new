@@ -1,7 +1,7 @@
 	python
 	mais anotações referentes 
 numeros
-	
+	int 1+4=5
 	Números complexos são sempre representados por dois números ponto-flutuante, a parte real e a parte imaginária.
 	Para extrair as partes de um número z, utilize z.real e z.imag.
 	>>> a=1.5+0.5j
