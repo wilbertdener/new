@@ -1,0 +1,743 @@
+	python
+	
+numeros
+
+	Números complexos são sempre representados por dois números ponto-flutuante, a parte real e a parte imaginária.
+	Para extrair as partes de um número z, utilize z.real e z.imag.
+	>>> a=1.5+0.5j
+	>>> a.real
+	1.5
+	>>> a.imag
+	0.5
+	As funções de conversão para ponto-flutuante e inteiro (float(), int() e long()) não funcionam para
+	números complexos—não existe maneira correta de converter um número complexo para um número real. Utilize
+	abs(z) para obter sua magnitude (como ponto-flutuante) ou z.real para obter sua parte real.
+
+	>>> tax = 12.5 / 100
+	>>> price = 100.50
+	>>> price * tax
+	12.5625
+	>>> price + _
+	113.0625
+	>>> round(_, 2)
+	113.06
+
+strings
+
+	>>> ’spam eggs’
+	’spam eggs’
+	>>> ’doesn\’t’
+	"doesn’t"
+	>>> "doesn’t"
+	"doesn’t"
+	>>> ’"Yes," he said.’
+	’"Yes," he said.’
+	>>> "\"Yes,\" he said."
+	’"Yes," he said.’
+	>>> ’"Isn\’t," she said.’
+	’"Isn\’t," she said.’
+	
+	para abranger mais de uma linha use """   """
+	
+	print("""\
+			Usage: thingy [OPTIONS]
+				 -h                        Display this usage message
+				 -H hostname               Hostname to connect to
+			""")
+
+	>>>oi = "Esta eh uma string longa contendo\n\
+	diversas linhas de texto assim como voce faria em C.\n\
+		Observe que os espaços em branco no inicio da linha são \
+	significativos."
+	print oi
+	
+	Esta eh uma string longa contendo
+	diversas linhas de texto assim como voce faria em C.
+		Observe que os espaços em branco no inicio da linha são significativos.
+		
+	>>>oi = r"Esta eh uma string longa contendo\n\
+	diversas linhas de texto assim como voce faria em C.\n\
+		Observe que os espaços em branco no inicio da linha são \
+	significativos."
+	print oi
+	
+	Esta eh uma string longa contendo\n\
+	diversas linhas de texto assim como voce faria em C.\n\
+		Observe que os espaços em branco no inicio da linha são \
+	significativos
+	
+	>>> word = ’Help’ + ’A’
+	>>> word
+	’HelpA’
+	>>> ’<’ + word*5 + ’>’
+	’<HelpAHelpAHelpAHelpAHelpA>’
+
+	Índices podem ser números negativos, para iniciar a contagem a partir da direita ao invés da esquerda. Por
+	exemplo:
+	>>> word[-1] # O útlimo caracter
+	’A’
+	>>> word[-2] # O penúltimo caracter
+	’p’
+	>>> word[-2:] # Os dois últimos caracteres
+	’pA’
+	>>> word[:-2] # Tudo exceto os dois últimos caracteres
+	’Hel’
+		
+Listas
+	Mais importante, os valores contidos na lista não precisam ser do mesmo tipo.
+	a = [’spam’, ’eggs’, 100, 1234]
+	>>> a[0]
+	’spam’
+	>>> a[3]
+	1234
+	>>> a[-2]
+	100
+	>>> a[1:-1]
+	[’eggs’, 100]
+	>>> a[:2] + [’bacon’, 2*2]
+	[’spam’, ’eggs’, ’bacon’, 4]
+	>>> 3*a[:3] + [’Boo!’]
+	[’spam’, ’eggs’, 100, ’spam’, ’eggs’, 100, ’spam’, ’eggs’, 100, ’Boo!’]
+	
+	>>>lista= [1,2,3,[10,'alvo',15],18,20]
+	>>>lista.append(10)
+	>>>lista
+	[1, 2, 3, [10, 'alvo', 15], 18, 20, 10]
+	
+	A função interna len() também se aplica a lista:
+	>>> len(a)
+	10
+	
+	>>> q = [2, 3]
+	>>> p = [1, q, 4]
+	>>> len(p)
+	3
+	>>> p[1]
+	[2, 3]
+	>>> p[1][0]
+	2
+	>>> p[1].append(’xtra’) # See section 5.1
+	>>> p
+	[1, [2, 3, ’xtra’], 4]
+	>>> q
+	[2, 3, ’xtra’]
+	
+Atribuição multipla
+
+	>>> # Serie de Fibonacci :
+	... # A soma de dois elementos define o proximo
+	... a, b = 0, 1
+	>>> while b < 10:
+	... print b    #print b, a virgula no fim impede a quebra de linha
+	... a, b = b, a+b
+	...
+	1
+	1
+	2
+	3
+	5
+	8
+	
+Construção if
+
+	>>> x = int(raw_input("Por favor entre com um numero inteiro: "))
+	>>> if x < 0:
+	... x = 0
+	... print ’Negativo mudou para zero’
+	... elif x == 0:
+	... print ’Zero’
+	... elif x == 1:
+	... print ’Um’
+	... else:
+	... print ’Mais’
+	
+Construção for
+
+	>>> # Medindo algumas strings:
+	... a = [’gato’, ’janela’, ’defenestrar’]
+	>>> for x in a:
+	... print x, len(x)
+	...
+	gato 4
+	janela 6
+	defenestrar 11
+	
+	>>> for x in a[:]: # faz uma cópia da lista inteira
+	... if len(x) > 6: a.insert(0, x)
+	...
+	>>> a
+	[’defenestrar’, ’gato’, ’janela’, ’defenestrar’]
+	
+range()
+	>>> range(10)
+	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+	>>> range(5, 10)
+	[5, 6, 7, 8, 9]
+	>>> range(0, 10, 3)
+	[0, 3, 6, 9]
+	>>> range(-10, -100, -30)
+	[-10, -40, -70]
+	
+	>>> a = [’Mary’, ’had’, ’a’, ’little’, ’lamb’]
+	>>> for i in range(len(a)):
+	... print i, a[i]
+	...
+	0 Mary
+	1 had
+	2 a
+	3 little
+	4 lamb
+
+break, continue e else
+
+	O break, como no C, quebra o laço mais interno de um for ou while.
+	O continue, também emprestado do C, continua o próximo passo do laço mais interno.
+	
+	>>> for n in range(2, 10):
+	... for x in range(2, n):
+	... if n % x == 0:
+	... print n, ’equals’, x, ’*’, n/x
+	... break
+	... else:
+	... # loop fell through without finding a factor
+	... print n, ’is a prime number’
+	...
+	2 is a prime number
+	3 is a prime number
+	4 equals 2 * 2
+	5 is a prime number
+	6 equals 2 * 3
+	7 is a prime number
+	8 equals 2 * 4
+	9 equals 3 * 3
+	
+pass
+
+	A construção pass não faz nada. Ela pode ser usada quando a sintaxe exige um comando mas a semântica do
+	programa não requer nenhuma ação.
+	if True: pass
+	
+Definindo Funções
+
+	>>> def fib(n): # escreve a serie de Fibonacci ate n
+	... """Print a Fibonacci series up to n"""
+	... a, b = 0, 1
+	... while b < n:
+	... print b,
+	... a, b = b, a+b
+	...
+	>>> # Agora invoca a funçao que acabamos de definir
+	... fib(2000)
+	1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
+	
+Parâmetros com Valores Default
+	
+	def ask_ok(prompt, retries=4, complaint=’Yes or no, please!’):
+		while 1:
+			ok = raw_input(prompt)
+			if ok in (’y’, ’ye’, ’yes’): return True
+			if ok in (’n’, ’no’, ’nop’, ’nope’): return False
+			retries = retries - 1
+			if retries < 0: raise IOError, ’refusenik user’
+			print complaint
+			
+	
+	def f(a, L=[]):
+		L.append(a)
+		return L
+		print f(1)
+		print f(2)
+		print f(3)
+	isso irá imprimir:
+	[1]
+	[1, 2]
+	[1, 2, 3]
+	
+Parâmetros na Forma Chave-Valor
+	def parrot(voltage, state=’a stiff’, action=’voom’, type=’Norwegian Blue’):
+		print "-- This parrot wouldn’t", action,
+		print "if you put", voltage, "volts through it."
+		print "-- Lovely plumage, the", type
+		print "-- It’s", state, "!"
+
+	poderia ser chamada em qualquer uma das seguintes maneiras:
+	
+	parrot(1000)
+	parrot(action = ’VOOOOOM’, voltage = 1000000)
+	parrot(’a thousand’, state = ’pushing up the daisies’)
+	parrot(’a million’, ’bereft of life’, ’jump’)
+	
+	porém, existem maneiras inválidas:
+	
+	parrot() # parâmetro exigido faltando
+	parrot(voltage=5.0, ’dead’) # parâmetro não-chave-valor depois de parâmetro chave-valor
+	parrot(110, voltage=220) # valor duplicado para mesmo parâmetro
+	parrot(actor=’John Cleese’) # parâmetro desconhecido
+		
+	Quando o último parâmetro formal for **name, ele armazenará todos os parâmetros efetivamente passados para
+	a função, exceto aqueles que não correspondiam a parâmetros formais. Isto pode ser combinado com o parâmetro
+	formal *name (descrito na próxima sub-seção) que recebe a lista contendo todos argumentos posicionais que não
+	correspondiam a parâmetros formais. O importante é que (*name deve ser declarado antes de **name.) Siga o
+	exemplo:
+	
+	def cheeseshop(kind, *arguments, **keywords):
+		print "-- Do you have any", kind, ’?’
+		print "-- I’m sorry, we’re all out of", kind
+		for arg in arguments: print arg
+		print ’-’*40
+		keys = keywords.keys()
+		keys.sort()
+		for kw in keys: print kw, ’:’, keywords[kw]
+	
+	cheeseshop(’Limburger’, "It’s very runny, sir.",
+				"It’s really very, VERY runny, sir.",
+				client=’John Cleese’,
+				shopkeeper=’Michael Palin’,
+				sketch=’Cheese Shop Sketch’)
+				
+	-- Do you have any Limburger ?
+	-- I’m sorry, we’re all out of Limburger
+	It’s very runny, sir.
+	It’s really very, VERY runny, sir.
+	----------------------------------------
+	client : John Cleese
+	shopkeeper : Michael Palin
+	sketch : Cheese Shop Sketch
+	
+	Note que o método sort() da lista de chaves em keywords é chamado antes de exibir o conteúdo do dicionário;
+	se isso não fosse feito, eles seriam exibidos em ordem arbitrária.
+	
+Parâmetros especiais
+
+	somente argumentos nomeados como indicado pelo *,antes do primeiro parâmetro somente-nomeado.
+	somente-posicional são colocados antes de /
+	
+	>>> def standard_arg(arg):
+	...     print(arg)
+	...
+	>>> def pos_only_arg(arg, /):
+	...     print(arg)
+	...
+	>>> def kwd_only_arg(*, arg):
+	...     print(arg)
+	...
+	>>> def combined_example(pos_only, /, standard, *, kwd_only):
+	...     print(pos_only, standard, kwd_only)
+
+	>>> standard_arg(2)
+	2
+
+	>>> standard_arg(arg=2)
+	2
+	
+	>>> pos_only_arg(1)
+	1
+
+	>>> pos_only_arg(arg=1)
+	ERRO
+	
+	>>> kwd_only_arg(3)
+	ERRO
+	>>> kwd_only_arg(arg=3)
+	3
+	>>> combined_example(1, 2, 3)
+	ERRO
+	>>> combined_example(1, 2, kwd_only=3)
+	1 2 3
+
+	>>> combined_example(1, standard=2, kwd_only=3)
+	1 2 3
+
+	>>> combined_example(pos_only=1, standard=2, kwd_only=3)
+	ERRO
+
+	Use somente-posicional se você não quer que o nome do parâmetro esteja disponível para o usuário. Isso é útil quando nomes de parâmetros não tem um significado real, se você quer forçar a ordem dos argumentos da função quando ela é chamada ou se você precisa ter alguns parâmetros posicionais e alguns nomeados.
+
+	Use somente-nomeado quando os nomes tem significado e a definição da função fica mais clara deixando esses nomes explícitos ou se você quer evitar que usuários confiem na posição dos argumentos que estão sendo passados.
+
+	Para uma API, use somente-posicional para evitar quebras na mudança da API se os nomes dos parâmetros forem alterados no futuro.
+
+
+Listas Arbitrárias de Argumentos
+
+	def fprintf(file, format, *args):
+		file.write(format % args)
+		
+		
+Desempacotando Listas de Argumentos
+
+	>>> range(3, 6) # normal call with separate arguments
+	[3, 4, 5]
+	>>> args = [3, 6]
+	>>> range(*args) # call with arguments unpacked from a list
+	[3, 4, 5]
+
+Funções Lambda
+
+	>>> def make_incrementor(n):
+	... return lambda x: x + n
+	...
+	>>> f = make_incrementor(42)
+	>>> f(0)
+	42
+	>>> f(1)
+	43
+	
+Mais sobre Listas
+	append(x)
+		Adiciona um item ao fim da lista; equivalente a a[len(a):] = [x].
+	extend(L)
+		Extende a lista adicionando no fim todos os elementos da lista passada como parâmetro; equivalente a
+		a[len(a):] = L.
+	insert(i, x)
+		Insere um item em uma posição especificada. O primeiro argumento é o índice do elemento anterior ao que
+		está para ser inserido, assim a.insert(0, x) insere no início da lista, e a.insert(len(a), x) é
+		equivalente a a.append(x).
+	remove(x)
+		Remove o primeiro item da lista cujo valor é x. É gerado um erro se este valor não existir.
+	pop([i ])
+		Remove o item na posição dada e o retorna. Se nenhum item for especificado, a.pop() remove e retorna
+		o último item na lista. (Os colchetes ao redor de i indicam que o parâmetro é opcional, não que você deva
+		digitá-los naquela posição. Você verá essa notação com frequência na Referência da Biblioteca Python.)
+	list.clear()
+		Remove todos os itens de uma lista. Equivalente a del a[:].
+	index(x)
+		Retorna o índice do primeiro item cujo valor é igual ao argumento fornecido em x, gerando erro se este
+		valor não existe
+	count(x)
+		Retorna o número de vezes que o valor x aparece na lista.
+	sort()
+		Ordena os itens da lista sem gerar uma nova lista.
+	reverse()
+		Inverte a ordem dos elementos na lista sem gerar uma nova lista.
+	list.copy()
+		Devolve uma cópia rasa da lista. Equivalente a a[:].
+
+
+	>>> a = [66.25, 333, 333, 1, 1234.5]
+	>>> print a.count(333), a.count(66.25), a.count(’x’)
+	2 1 0
+	>>> a.insert(2, -1)
+	>>> a.append(333)
+	>>> a
+	[66.25, 333, -1, 333, 1, 1234.5, 333]
+	>>> a.index(333)
+	1
+	>>> a.remove(333)
+	>>> a
+	[66.25, -1, 333, 1, 1234.5, 333]
+	>>> a.reverse()
+	>>> a
+	[333, 1234.5, 1, 333, -1, 66.25]
+	>>> a.sort()
+	>>> a
+	[-1, 1, 66.25, 333, 333, 1234.5]
+	
+Usando Listas como Pilhas
+	
+	Para adicionar um item ao topo da pilha, use append(). 
+	Para recuperar um item do topo da pilha use pop()
+	
+	>>> stack.append(7)
+	>>> stack
+	[3, 4, 5, 6, 7]
+	>>> stack.pop()
+	7
+	>>> stack
+	[3, 4, 5, 6]
+	
+Usando Listas como Filas
+		
+	Para adicionar um elemento ao fim da fila utiliza append(). Para
+	recuperar um elemento do início da fila use pop() com 0 no índice.
+	
+	>>> queue = ["Eric", "John", "Michael"]
+	>>> queue.append("Terry") # Terry arrives
+	>>> queue.append("Graham") # Graham arrives
+	>>> queue.pop(0)
+	’Eric’
+	>>> queue.pop(0)
+	’John’
+	>>> queue
+	[’Michael’, ’Terry’, ’Graham’]
+	
+Ferramentas para Programação Funcional
+
+	‘filter(function, sequence)’ retorna uma sequência consistindo dos itens pertencentes a sequência para os
+	quais function(item) é verdadeiro.
+	
+	>>> def f(x): return x % 2 != 0 and x % 3 != 0
+	...
+	>>> filter(f, range(2, 25))
+	[5, 7, 11, 13, 17, 19, 23]
+	
+	‘map(function, sequence)’ aplica function(item) para cada item da sequência e retorna a lista de valores retornados
+	a cada aplicação.
+	
+	>>> seq = range(8)
+	>>> def square(x, y): return x+y
+	...
+	>>> map(square, seq, seq)
+	[0, 2, 4, 6, 8, 10, 12, 14]
+
+	‘reduce(function, sequence)’ retorna um único valor construído a partir da sucessiva aplicação da função
+	binária function a todos os elementos da lista fornecida, dois de cada vez.
+
+	>>> def add(x,y): return x+y
+	...
+	>>> reduce(add, range(1, 11))
+	55
+
+	Um terceiro argumento pode ser passado para indicar o valor inicial. Neste caso, redução de sequências vazias
+	retornará o valor inicial.
+
+	>>> def sum(seq):
+	... def add(x,y): return x+y
+	... return reduce(add, seq, 0)
+	...
+	>>> sum(range(1, 11))
+	55
+	>>> sum([])
+	0
+
+Abrangência de Lista (List Comprehensions)
+
+	>>> freshfruit = [’ banana’, ’ loganberry ’, ’passion fruit ’]
+	>>> [weapon.strip() for weapon in freshfruit]
+	[’banana’, ’loganberry’, ’passion fruit’]
+	>>> vec = [2, 4, 6]
+	>>> [3*x for x in vec]
+	[6, 12, 18]
+	>>> [3*x for x in vec if x > 3]
+	[12, 18]
+	>>> [3*x for x in vec if x < 2]
+	[]
+	>>> [[x,x**2] for x in vec]
+	[[2, 4], [4, 16], [6, 36]]
+	>>> [x, x**2 for x in vec] # erro - parenteses requerido para tuplas
+	File "<stdin>", line 1 in ?
+	[x, x**2 for x in vec]
+	^
+	SyntaxError: invalid syntax
+	>>> [(x, x**2) for x in vec]
+	[(2, 4), (4, 16), (6, 36)]
+	>>> vec1 = [2, 4, 6]
+	>>> vec2 = [4, 3, -9]
+	>>> [x*y for x in vec1 for y in vec2]
+	[8, 6, -18, 16, 12, -36, 24, 18, -54]
+	>>> [x+y for x in vec1 for y in vec2]
+	[6, 5, -7, 8, 7, -5, 10, 9, -3]
+	>>> [vec1[i]*vec2[i] for i in range(len(vec1))]
+	[8, 12, -54]
+
+O comando del
+	>>> a = [-1, 1, 66.25, 333, 333, 1234.5]
+	>>> del a[0]
+	>>> a
+	[1, 66.25, 333, 333, 1234.5]
+	>>> del a[2:4]
+	>>> a
+	[1, 66.25, 1234.5]
+	
+Tuplas e Sequências(tuplas são lista que n podem mudar, ())
+
+	Uma tupla consiste em uma sequência imutável de valores separados por vírgulas.
+	>>> t = 12345, 54321, ’hello!’
+	>>> t[0]
+	12345
+	>>> t
+	(12345, 54321, ’hello!’)
+	>>> # Tuplas podem ser aninhadas:
+	... u = t, (1, 2, 3, 4, 5)
+	>>> u
+	((12345, 54321, ’hello!’), (1, 2, 3, 4, 5))
+	
+	t = 12345, 54321, ’hello!’
+	>>> x, y, z = t
+	
+Sets
+	Um conjunto é uma coleção desordenada de dados, sem elementos duplicados.
+	
+	>>> basket = [’apple’, ’orange’, ’apple’, ’pear’, ’orange’, ’banana’]
+	>>> fruits = set(basket) # create a set without duplicates
+	>>> fruits
+	set([’orange’, ’pear’, ’apple’, ’banana’])
+	>>> ’orange’ in fruits # fast membership testing
+	True
+	>>> ’crabgrass’ in fruits
+	False
+	>>> # Demonstrate set operations on unique letters from two words
+	...
+	>>> a = set(’abracadabra’)
+	>>> b = set(’alacazam’)
+	>>> a # unique letters in a
+	set([’a’, ’r’, ’b’, ’c’, ’d’])
+	>>> a - b # letters in a but not in b
+	set([’r’, ’d’, ’b’])
+	>>> a | b # letters in either a or b
+	set([’a’, ’c’, ’r’, ’d’, ’b’, ’m’, ’z’, ’l’])
+	>>> a & b # letters in both a and b
+	set([’a’, ’c’])
+	>>> a ^ b # letters in a or b but not both
+	set([’r’, ’d’, ’b’, ’m’, ’z’, ’l’])
+	
+Dicionários
+	O método keys() do dicionário retorna a lista de todas as chaves presentes no dicionário, em ordem arbitrária (se
+	desejar ordená-las basta aplicar o método sort() na lista devolvida). Para verificar a existência de uma chave,
+	utilize o método has_key() do dicionário ou a keyword in.
+	
+	>>> tel = {’jack’: 4098, ’sape’: 4139}
+	>>> tel[’guido’] = 4127
+	>>> tel
+	{’sape’: 4139, ’guido’: 4127, ’jack’: 4098}
+	>>> tel[’jack’]
+	4098
+	>>> del tel[’sape’]
+	>>> tel[’irv’] = 4127
+	>>> tel
+	{’guido’: 4127, ’irv’: 4127, ’jack’: 4098}
+	>>> tel.keys()
+	[’guido’, ’irv’, ’jack’]
+	>>> tel.has_key(’guido’)
+	True
+	>>> ’guido’ in tel
+	True
+
+	A construtora dict() produz dicionários diretamente a partir de uma lista de chaves-valores, armazenadas como tuplas.
+
+	>>> dict([(’sape’, 4139), (’guido’, 4127), (’jack’, 4098)])
+	{’sape’: 4139, ’jack’: 4098, ’guido’: 4127}
+	>>> dict([(x, x**2) for x in (2, 4, 6)]) # use a list comprehension
+	{2: 4, 4: 16, 6: 36}
+	
+	Ao percorrer um dicionário com um laço, a chave e o valor correspondente podem ser obtidos simultaneamente
+	com o método iteritems().
+	
+	>>> knights = {’gallahad’: ’the pure’, ’robin’: ’the brave’}
+	>>> for k, v in knights.iteritems():
+	... print k, v
+	...
+	gallahad the pure
+	robin the brave
+	
+	Ao percorrer uma sequência qualquer, o índice da posição atual e o valor correspondente podem ser obtidos
+	simultaneamente usando a função enumerate().
+	
+	>>> for i, v in enumerate([’tic’, ’tac’, ’toe’]):
+	... print i, v
+	...
+	0 tic
+	1 tac
+	2 toe
+	
+	Para percorrer duas ou mais sequências simultaneamente com o laço, os items podem ser agrupados com a função zip().
+	
+	>>> questions = [’name’, ’quest’, ’favorite color’]
+	>>> answers = [’lancelot’, ’the holy grail’, ’blue’]
+	>>> for q, a in zip(questions, answers):
+	... print ’What is your %s? It is %s.’ % (q, a)
+	...
+	What is your name? It is lancelot.
+	What is your quest? It is the holy grail.
+	What is your favorite color? It is blue.
+	
+	Para percorrer uma sequência em ordem reversa, chame a função reversed() com a sequência na ordem
+	original.
+	
+	>>> for i in reversed(xrange(1,10,2)):
+	... print i
+	...
+	9
+	7
+	5
+	3
+	1
+	
+	Para percorrer uma sequência de maneira ordenada, use a função sorted(), que retorna uma lista ordenada com
+	os items, mantendo o original inalterado.
+	
+	>>> basket = [’apple’, ’orange’, ’apple’, ’pear’, ’orange’, ’banana’]
+	>>> for f in sorted(set(basket)):
+	... print f
+	...
+	apple
+	banana
+	orange
+	pear
+	
+	Os operadores de comparação in e not in verificam se um valor ocorre (ou não ocorre) em uma dada sequência.
+	Os operadores is e is not comparam se dois objetos são na verdade o mesmo objetos; o que só é significativo
+	no contexto de objetos mutáveis, como listas.
+	
+	a condição A and not B or C é equivalente a (A and (not B)) or C.
+	Naturalmente, parênteses podem ser usados para expressar o agrupamento desejado.
+
+Comparando Sequências e Outros Tipos
+
+	Alguns exemplos de comparações entre sequências do mesmo tipo:
+	(1, 2, 3) < (1, 2, 4)
+	[1, 2, 3] < [1, 2, 4]
+	’ABC’ < ’C’ < ’Pascal’ < ’Python’
+	(1, 2, 3, 4) < (1, 2, 4)
+	(1, 2) < (1, 2, -1)
+	(1, 2, 3) == (1.0, 2.0, 3.0)
+	(1, 2, (’aa’, ’ab’)) < (1, 2, (’abc’, ’a’), 4)
+	
+Módulos
+
+	use 	seu editor de textos favorito para criar um arquivo chamado ‘fibo.py’ no diretório corrente com o seguinte conteúdo:
+	
+	# Módulo Sequências de Fibonacci
+	def fib(n): # write Fibonacci series up to n
+	a, b = 0, 1
+		while b < n:
+			print b,
+			a, b = b, a+b
+	def fib2(n): # return Fibonacci series up to n
+		result = []
+		a, b = 0, 1
+		while b < n:
+			result.append(b)
+			a, b = b, a+b
+		return result
+	
+	Agora inicie o interpretador e importe o módulo da seguinte forma:
+	>>> import fibo
+	
+	Isso não incorpora as funções definidas em fibo diretamente na tabela de símbolos corrente, apenas coloca o
+	nome do módulo lá. Através do nome do módulo você pode acessar as funções:
+	
+	>>> fibo.fib(1000)
+	1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+	>>> fibo.fib2(100)
+	[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+	>>> fibo.__name__
+	’fibo’
+	
+	Se você pretende utilizar uma função frequentemente, é possível atribuir a ela um nome local:
+	>>> fib = fibo.fib
+	>>> fib(500)
+	1 1 2 3 5 8 13 21 34 55 89 144 233 377
+
+	>>> from fibo import fib, fib2
+	>>> fib(500)
+	1 1 2 3 5 8 13 21 34 55 89 144 233 377
+
+	>>> from fibo import *
+	>>> fib(500)
+	1 1 2 3 5 8 13 21 34 55 89 144 233 377
+	
+	>>> import fibo, sys
+	>>> dir(fibo)
+	[’__name__’, ’fib’, ’fib2’]
+	
+	
+	Fim-cap 7 pag. 53 - Apostila Básica python
+	
+	str_taxa=input('Digite a taxa: ')
+	maior_numero = max(1, 2, 3)
+	maior_letra = max('a', 'b', 'c')
+	print(maior_numero)
+	print(maior_letra)
+	import math
+	exponencial = math.exp(3)
