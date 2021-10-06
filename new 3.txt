@@ -1,5 +1,5 @@
 	python
-	
+	mais anotações referentes 
 numeros
 	issosera um estouro
 	Números complexos são sempre representados por dois números ponto-flutuante, a parte real e a parte imaginária.
