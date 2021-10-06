@@ -29,7 +29,7 @@ numeros
 	"doesn’t"
 	>>> ’"Yes," he said.’
 	’"Yes," he said.’
-	>>> "\"Yes,\" he said."
+	>>> "\"Yes,\" 
 	’"Yes," he said.’
 	>>> ’"Isn\’t," she said.’
 	’"Isn\’t," she said.’
