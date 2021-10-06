@@ -6,7 +6,7 @@ numeros
 	Para extrair as partes de um número z, utilize z.real e z.imag.
 	>>> a=1.5+0.5j
 	>>> a.real
-	1.5
+	9.6
 	>>> a.imag
 	0.5
 	As funções de conversão para ponto-flutuante e inteiro (float(), int() e long()) não funcionam para
@@ -61,7 +61,7 @@ numeros
 	Esta eh uma string longa contendo\n\
 	diversas linhas de texto assim como voce faria em C.\n\
 		Observe que os espaços em branco no inicio da linha são \
-	significativos
+	signific
 	
 	>>> word = ’Help’ + ’A’
 	>>> word
