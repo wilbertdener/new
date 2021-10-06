@@ -86,15 +86,7 @@ strings
 Listas
 	Mais importante, os valores contidos na lista não precisam ser do mesmo tipo.
 	a = [’spam’, ’eggs’, 100, 1234]
-	>>> a[0]
-	’spam’
-	>>> a[3]
-	1234
-	>>> a[-2]
-	100
-	>>> a[1:-1]
-	[’eggs’, 100]
-	>>> a[:2] + [’bacon’, 2*2]
+	>>> a
 	[’spam’, ’eggs’, ’bacon’, 4]
 	>>> 3*a[:3] + [’Boo!’]
 	[’spam’, ’eggs’, 100, ’spam’, ’eggs’, 100, ’spam’, ’eggs’, 100, ’Boo!’]
