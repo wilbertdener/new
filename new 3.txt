@@ -13,7 +13,7 @@ numeros
 	números complexos—não existe maneira correta de converter um número complexo para um número real. Utilize
 	abs(z) para obter sua magnitude (como ponto-flutuante) ou z.real para obter sua parte real.
 
-	>>> tax = 12.5 / 100
+	>>12.5 / 100
 	>>> price = 330.5
 	>>> price * tax
 	12.5625
