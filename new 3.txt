@@ -23,7 +23,7 @@ numeros
 
 
 
-	>>> ’spam eggs’
+	>>> ’spam eggs’ hue
 	
 	"doesn’t"
 	>>> ’"Yes," he said.’
