@@ -41,7 +41,7 @@ numeros
 				 -H hostname               Hostname to connect to
 			""")
 
-	>>>oi = "Esta eh uma string longa contendo\n\
+	>>>oi = "Esta eh uma string longa contendo algo\n\
 	diversas linhas de texto assim como voce faria em C.\n\
 		Observe que os espaços em branco no inicio da linha são \
 	significativos."
