@@ -1,4 +1,5 @@
 	python 3 
+	falta algumas pessoas
 	minha vez
 numeros
 	int 1+4=5
