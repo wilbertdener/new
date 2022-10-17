@@ -1,5 +1,6 @@
 	python 3 
 	vamos la
+	segundou
 	mais anotações referentes 
 numeros
 	int 1+4=5
