@@ -1,6 +1,4 @@
-	python 3 la vamos nos
-	nova camiseta
-	hhhhhh
+	python 3 
 	mais anotações referentes 
 numeros
 	int 1+4=5
