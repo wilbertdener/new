@@ -1,9 +1,5 @@
 	python 3 
 	
-	
-	mais anotações referentes 
-	mais bla bla
-	
 	aiaiaia
 numeros
 	int 1+4=5
