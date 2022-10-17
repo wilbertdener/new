@@ -1,8 +1,7 @@
 	python 3 
 	atualização
 	
-	mais anotações referentes 
-	mais bla bla
+	tudo dnv
 numeros
 	int 1+4=5
 	Números complexos são sempre representados por dois números ponto-flutuante, a parte real e a parte imaginária.
