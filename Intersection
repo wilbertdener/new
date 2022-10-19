@@ -1,4 +1,5 @@
     def kley(self):
+        int num, cont 
         cap2 = cv2.imread("new/1 (7).jpg")
         img2 = cv2.resize(cap2, (550, 380))
         img3=img2.copy()
