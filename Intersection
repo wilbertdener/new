@@ -1,6 +1,7 @@
     def kley(self):
 
         int num, cont 
+        float valor
        
         img2 = cv2.resize(cap2, (550, 380))
         img3=img2.copy()
