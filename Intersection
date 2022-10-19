@@ -1,4 +1,4 @@
-    def kley(self):
+    def intersection(self):
 
         int num, cont 
         float valor
