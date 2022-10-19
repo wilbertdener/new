@@ -50,6 +50,7 @@
         #cv2.imwrite("testerisco.jpg",fundo2)
         #fundo2 = cv2.rotate(fundo2, cv2.ROTATE_90_COUNTERCLOCKWISE)
 
-        #histR = cv2.calcHist(fundo2+50,[1],None,[256],[0,256])
+        #histR = cv2.calcHist(fundo2+50,[1],None,[256],[0,0])
         #plt.plot(histR)
         plt.show()
+        print("evento chegando gente, quero camisa")
