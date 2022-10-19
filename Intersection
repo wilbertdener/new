@@ -1,8 +1,8 @@
     def kley(self):
-        cap2 = cv2.imread("new/1 (7).jpg")
+        cap2 = cv2.imread("new/1.jpg")
         img2 = cv2.resize(cap2, (550, 380))
         img3=img2.copy()
-        cap1 = cv2.imread("new/1 (1).jpg")
+        cap1 = cv2.imread("new/1.jpg")
         img1 = cv2.resize(cap1, (380, 550))
         img1 = cv2.rotate(img1, cv2.ROTATE_90_COUNTERCLOCKWISE)
         img2=img2*2+100 #*0.8+50
@@ -50,6 +50,3 @@
         #histR = cv2.calcHist(fundo2+50,[1],None,[256],[0,256])
         #plt.plot(histR)
         plt.show()
-
-        #cv2.waitKey(0)
-        #cv2.destroyAllWindows()
