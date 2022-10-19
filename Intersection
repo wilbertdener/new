@@ -2,7 +2,7 @@
 
         int num, cont 
         float valor
-       
+        #codigo daora
         img2 = cv2.resize(cap2, (550, 380))
         img3=img2.copy()
         cap1 = cv2.imread("new/1.jpg")
