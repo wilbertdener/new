@@ -21,7 +21,7 @@
         from skimage.data import astronaut
         from skimage.color import label2rgb
 
-        # Setting the plot size as 15, 15
+        # Setting the plot size as 20, 20
         plt.figure(figsize=(15, 15))
 
         # Sample Image of scikit-image package
