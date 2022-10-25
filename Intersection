@@ -12,6 +12,7 @@
 
         fundo1 = self.retira(img1)
         fundo2 = self.retira(img2)
+        fundo3 = self.retira(img3)
 
         #cv2.imshow("fundo1", img3)
         #cv2.imshow("fundo2", img2)
