@@ -54,5 +54,6 @@
 
         #histR = cv2.calcHist(fundo2+50,[1],None,[256],[0,0])
         #plt.plot(histR)
+        plt.show(members)
         plt.show()
         print("evento chegando gente, quero camisa")
