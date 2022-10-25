@@ -15,9 +15,9 @@
         fundo2 = self.retira(img2)
         fundo3 = self.retira(img3)
 
-        #cv2.imshow("fundo1", img3)
-        #cv2.imshow("fundo2", img2)
-        #cv2.imshow("sem fundo",fundo2)###
+        cv2.imshow("fundo1", img3)
+        cv2.imshow("fundo2", img2)
+        cv2.imshow("sem fundo",fundo2)###
 
         from skimage.segmentation import slic
         from skimage.data import astronaut
