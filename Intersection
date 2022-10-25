@@ -1,6 +1,6 @@
     def intersection(self):
 
-        int num, cont 
+        int num, cont, members
         float valor
         #codigo daora
         img2 = cv2.resize(cap2, (550, 380))
