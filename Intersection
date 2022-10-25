@@ -43,6 +43,7 @@
 
         # Converts a label image into
         # an RGB color image for visualizing
+        # verificação em andamento para melhor adaptar
         # the labeled regions.
         plt.imshow(label2rgb(astronaut_segments,
                              astronaut,
