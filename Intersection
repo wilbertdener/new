@@ -53,7 +53,7 @@
                              astronaut,
                              kind='avg'))
 
-
+        #teste teste para terminar
         #cv2.imwrite("testerisco.jpg",fundo2)
         #fundo2 = cv2.rotate(fundo2, cv2.ROTATE_90_COUNTERCLOCKWISE)
 
