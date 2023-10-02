@@ -63,3 +63,4 @@
         plt.show()
         print("evento do ano chegou")
         print("e esse é o fim, acabou, vou pegar 2 ")
+print("sera que esses prints sao necessarios?")
