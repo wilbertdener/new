@@ -3,7 +3,7 @@
         int num, cont, members
         float valor
         string texto
-        vet[]=["oi","mundo"]
+        vet[]=["oi","codigo"]
         #codigo daora
         img2 = cv2.resize(cap2, (550, 380))
         img3=img2.copy()
